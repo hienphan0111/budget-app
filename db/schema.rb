@@ -14,31 +14,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_080439) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "entities", force: :cascade do |t|
-    t.string "name"
-    t.decimal "amount"
-    t.bigint "author_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["author_id"], name: "index_entities_on_author_id"
-  end
-
-  create_table "groups", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.index ["user_id"], name: "index_groups_on_user_id"
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table "groups_entities", force: :cascade do |t|
-    t.bigint "group_id", null: false
-    t.bigint "entity_id", null: false
+  create_table "categories_trades", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "trade_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["entity_id"], name: "index_groups_entities_on_entity_id"
-    t.index ["group_id"], name: "index_groups_entities_on_group_id"
+    t.index ["category_id"], name: "index_categories_trades_on_category_id"
+    t.index ["trade_id"], name: "index_categories_trades_on_trade_id"
+  end
+
+  create_table "trades", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.bigint "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_trades_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,8 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_080439) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "entities", "users", column: "author_id"
-  add_foreign_key "groups", "users"
-  add_foreign_key "groups_entities", "entities"
-  add_foreign_key "groups_entities", "groups"
+  add_foreign_key "categories", "users"
+  add_foreign_key "categories_trades", "categories"
+  add_foreign_key "categories_trades", "trades"
+  add_foreign_key "trades", "users", column: "author_id"
 end
