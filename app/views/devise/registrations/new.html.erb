@@ -1,29 +1,38 @@
-<h2>Sign up</h2>
+<div class="w-full h-full flex flex-col items-center relative gap-1 py-1 bg-gray-100 ">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="bg-[#3778c2] text-white flex justify-between p-2 items-center w-full">
+    <span class="w-5 h-5">
+      <%= link_to('/') do %>
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"></path>
+      </svg>
+      <% end %>
+    </span>
+    <h2 class="font-weight-bold">REGISTER</h2>
+    <span class="w-3"></span>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'w-full flex flex-col gap-1 relative'}) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, placeholder: 'Full name', class: 'w-full p-2' %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'w-full p-2' %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'w-full p-2' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Password confirmation', class: 'w-full p-2' %>
+    </div>
+
+    <div class="actions absolute right-2 -top-9 text-white hover:text-amber-400">
+      <%= f.submit "Next" %>
+    </div>
+  <% end %>
+</div>
