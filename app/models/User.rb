@@ -1,5 +1,10 @@
 class User < ApplicationRecord
-  validates :name, present: true
-
-  has_many :groups, :entities
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :confirmable
+  validates :name, presence: true
+  has_many :groups
+  has_many :entities
 end
