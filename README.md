@@ -2,18 +2,6 @@
   <a href="https://www.microverse.org/">
     <img alt="Microverse" src="https://img.shields.io/badge/-Microverse-blueviolet?style=flat-square">
   </a>
-  <a href="https://github.com/Hamzaoutdoors/Catalog-Of-My-Things/blob/dev/LICENSE.md">
-    <img alt="MIT Licensed" src="https://img.shields.io/github/license/Hamzaoutdoors/to-do-list?style=flat-square">
-  </a>
-  <a href="https://github.com/Hamzaoutdoors/Catalog-Of-My-Things">
-    <img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/Hamzaoutdoors/Catalog-Of-My-Things/dev?color=blue&style=flat-square">
-  </a>
-  <a href="https://github.com/Hamzaoutdoors/Catalog-Of-My-Things">
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Hamzaoutdoors/Catalog-Of-My-Things?color=green&label=%E2%98%85%20stars%20&style=flat-square">
-  </a>
-  <a href="https://github.com/Hamzaoutdoors">
-    <img alt="GitHub followers" src="https://img.shields.io/github/followers/Hamzaoutdoors?color=yellow&logo=github&style=flat-square">
-  </a>
 </p>
 
 <div align="center">
@@ -25,7 +13,7 @@
   </div>
    </br>
 
-# Ruby on Rails : Blog App project
+# Ruby on Rails : Budget App project
 
 # 📗 Table of Contents
 
@@ -47,7 +35,7 @@
 
 # 📖About the Project <a name="about-project"></a>
 
-The Blog app will allow users create, show the post as well as the reader can interact with them by adding comments and linking post.
+ This is a mobile web application where user can manage their budget: user have a list of transactions associated with a category, so that they can see how much money they spent and on what.
 
 <!--
 </br>
@@ -71,17 +59,9 @@ The Blog app will allow users create, show the post as well as the reader can in
 
 ### Key Features <a name="key-features"></a>
 
-- Creating a data model
-- Validations and Model specs
-- Processing data in models
-- Setup and controllers
-- Controllers specs
-- Views
-- Forms
-- Intergration spec for views and fixing n+1
-- Add Devise
-- Add authorization rules
-- Add API endpoints
+- register and log in.
+- introduce new transactions associated with a category.
+- see the money spent on each category.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -96,7 +76,7 @@ To get a local copy up and running, follow these steps.
 ### Clone the repository
 
 ```shell
-git clone https://github.com/hienphan0111/blog-app.git
+git clone https://github.com/hienphan0111/budget-app.git
 cd catelog-of-thing
 ```
 
@@ -194,7 +174,7 @@ If you like this project please give me a star.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 I would like to thank Microverse which provided me all knowledge about full stack development.
-
+I also would like to thank design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
@@ -202,5 +182,5 @@ I would like to thank Microverse which provided me all knowledge about full stac
 ## 📝 License <a name="license"></a>
 
 This project is contributed under [GNU 3.0](./LICENSE.md) licensed.
-
+And The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

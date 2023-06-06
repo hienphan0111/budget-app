@@ -1,0 +1,29 @@
+{
+  "name": "budget-app",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <a href=\"https://www.microverse.org/\">\r     <img alt=\"Microverse\" src=\"https://img.shields.io/badge/-Microverse-blueviolet?style=flat-square\">\r   </a>\r   <a href=\"https://github.com/Hamzaoutdoors/Catalog-Of-My-Things/blob/dev/LICENSE.md\">\r     <img alt=\"MIT Licensed\" src=\"https://img.shields.io/github/license/Hamzaoutdoors/to-do-list?style=flat-square\">\r   </a>\r   <a href=\"https://github.com/Hamzaoutdoors/Catalog-Of-My-Things\">\r     <img alt=\"GitHub last commit (branch)\" src=\"https://img.shields.io/github/last-commit/Hamzaoutdoors/Catalog-Of-My-Things/dev?color=blue&style=flat-square\">\r   </a>\r   <a href=\"https://github.com/Hamzaoutdoors/Catalog-Of-My-Things\">\r     <img alt=\"GitHub Repo stars\" src=\"https://img.shields.io/github/stars/Hamzaoutdoors/Catalog-Of-My-Things?color=green&label=%E2%98%85%20stars%20&style=flat-square\">\r   </a>\r   <a href=\"https://github.com/Hamzaoutdoors\">\r     <img alt=\"GitHub followers\" src=\"https://img.shields.io/github/followers/Hamzaoutdoors?color=yellow&logo=github&style=flat-square\">\r   </a>\r </p>",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hienphan0111/budget-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hienphan0111/budget-app/issues"
+  },
+  "homepage": "https://github.com/hienphan0111/budget-app#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.14"
+  }
+}

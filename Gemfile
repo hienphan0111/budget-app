@@ -73,3 +73,19 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'tailwindcss'
+gem 'autoprefixer-rails'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+# Devise authentication gem [https://github.com/heartcombo/devise]
+gem "devise"
+
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+group :development, :test do
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 5.0'
+end
