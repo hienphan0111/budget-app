@@ -1,3 +1,22 @@
-<div>
-  <h1 class="text-cyan-400">Budget App</h1>
+<div class="h-full flex flex-col justify-end items-center">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap');
+
+    .logo {
+      font-family: 'Lobster Two', cursive;
+      font-size: 40px;
+      font-weight: 700;
+    }
+  </style>
+  <span class="flex justify-center items-center h-full">
+    <h1 class="text-cyan-400 logo">Budget App</h1>
+  </span>
+  <div class="w-full flex flex-col justify-center items-center gap-2">
+    <span class="w-full">
+      <%= button_to 'LOG IN', new_user_session_path, class: 'w-full text-white bg-[#3778c2] py-2 rounded hover:bg-opacity-80' %>
+    </span>
+    <span class="w-full group/edit">
+      <%= button_to 'SIGN UP', new_user_registration_path, method: :get, class: 'border rounded w-full py-2 group-hover/edit:translate-x-0.5 group-hover/edit:bg-slate-200' %>
+    </span>
+  </div>
 </div>
