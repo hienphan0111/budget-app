@@ -1,0 +1,13 @@
+<div>
+  <%= render partial: 'shared/header_bar', locals: { url: categories_path, title: 'NEW CATEGORY' }%>
+
+  <%= form_with model: @categories, url: categories_path, method: :post, do |f| %>
+    <%= f.input_field :name, placeholder: 'Name' %>
+    <%= f.collection_select :icon, @icon_list %>
+
+    <div>
+      <% f.submit 'SAVE', %>
+    </div>
+  <% end %>
+
+</div>

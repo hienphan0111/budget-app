@@ -1,4 +1,4 @@
-class Entity < ApplicationRecord
+class Trade < ApplicationRecord
   validates :name, presence: true
   validates :amount, numbericality: { greater_than_or_equal_to(0) }
 

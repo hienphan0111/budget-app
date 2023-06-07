@@ -1,0 +1,38 @@
+<div class="h-full flex flex-col justify-between">
+  <section class="bg-[#3778c2] text-white p-2">
+    <div class="flex justify-between mb-3">
+      <span class="w-5 h-5">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </span>
+      <h2>TRADES</h2>
+      <span class="w-5 h-5">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </span>
+    </div>
+    <div class="flex justify-end mt-2 px-2 text-xs space-x-2">
+      <p>Most recent</p>
+      <p class="text-gray-300">Most ancient</p>
+    </div>
+  </section>
+  <section class="h-full bg-gray-200">
+    <% @categories&.map do |category| %>
+      <div>
+        <%= image_tag @category.icon %>
+        <div>
+          <%= category.name %>
+          <%= category.created_at %>
+        </div>
+        <%= category.trades.reduce(0) { |sum, tr| sum + tr.amount } %>
+      </div>
+    <% end %>
+  </section>
+
+  <section class="bg-[#5fb523] text-white py-2 text-center flex">
+    <%= link_to 'ADD CATEGORIES', new_category_path, class: 'border border-solid border-white mx-2 py-2 w-full hover:text-amber-300' %>
+  </section>
+
+</div>
