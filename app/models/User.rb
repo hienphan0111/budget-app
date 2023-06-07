@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
   validates :name, presence: true
-  has_many :groups
-  has_many :entities
+  has_many :categories
+  has_many :trades, foreign_key: 'author_id', class_name: 'Trade', dependent: :destroy
 end

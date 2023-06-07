@@ -18,15 +18,19 @@
       <p class="text-gray-300">Most ancient</p>
     </div>
   </section>
-  <section class="h-full bg-gray-200">
+  <section class="h-full bg-gray-200 flex flex-col space-y-2 pt-2 items-center">
     <% @categories&.map do |category| %>
-      <div>
-        <%= image_tag @category.icon %>
-        <div>
-          <%= category.name %>
-          <%= category.created_at %>
+      <div class="flex justify-between p-2 shadow-md bg-white gap-2 w-[95%] rounded-sm">
+        <div class="flex justify-between gap-2">
+          <%= image_tag category.icon, class: 'w-14 h-14' %>
+          <div class="flex flex-col justify-between">
+            <p class="pt-1"><%= link_to category.name, category_path(category) %></p>
+            <p class="text-xs"><%= category.created_at %></p>
+          </div>
         </div>
-        <%= category.trades.reduce(0) { |sum, tr| sum + tr.amount } %>
+        <p class="mr-2">
+        $<%= category.trades.reduce(0) { |sum, tr| sum + tr.amount } %>
+        </p>
       </div>
     <% end %>
   </section>

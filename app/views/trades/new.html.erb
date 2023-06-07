@@ -1,0 +1,14 @@
+<div class="h-full flex flex-col">
+  <%= render partial: 'shared/header_bar', locals: { url: categories_path, title: 'NEW TRADE' }%>
+
+  <%= form_with model: Trade.new, url: category_trades_path(@category), method: :post, local: true, html: { class: 'flex flex-col justify-between h-full'} do |f| %>
+    <div>
+      <%= f.text_field :name, placeholder: 'Name', class: 'w-full p-2' %>
+      <%= f.number_field :amount, step: 0.01, placeholder: 'Amount', class: 'w-full p-2'  %>
+    </div>
+    <div class="bg-[#5fb523] text-white py-2 text-center flex">
+      <%= f.submit 'SAVE' , class: 'border border-solid border-white mx-2 py-2 w-full hover:text-amber-300'%>
+    </div>
+  <% end %>
+
+</div>

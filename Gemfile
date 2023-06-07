@@ -89,3 +89,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 5.0'
 end
+
+gem 'inline_svg'
