@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
     if current_user
       @category = Category.find(params[:id])
       trades = @category.trades
-      @trades = trades.sort_by { |t| -(t.created_at.to_i) }
+      @trades = trades.sort_by { |t| -t.created_at.to_i }
     else
       redirect_to categories_path
     end
