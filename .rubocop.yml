@@ -11,6 +11,8 @@ AllCops:
     - 'config/**/*'
     - 'test/**/*'
     - 'bin/**/*'
+    - 'lib/**/*'
+    - 'assets/builds/**/*'
 
   DisplayCopNames: true
   Metrics/MethodLength:

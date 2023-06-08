@@ -20,16 +20,14 @@ class CategoriesController < ApplicationController
   def show
     if current_user
       @category = Category.find(params[:id])
-      @trades = @category.trades
-      # @trades = trades.sort_by { |t| t.created_at }
+      trades = @category.trades
+      @trades = trades.sort_by { |t| -(t.created_at.to_i) }
     else
       redirect_to categories_path
     end
   end
 
-  def new
-
-  end
+  def new; end
 
   def create
     category = Category.new(category_params)
