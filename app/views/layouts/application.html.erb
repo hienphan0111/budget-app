@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= javascript_include_tag "application", async: true %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -14,8 +15,6 @@
     <div class="flex justify-center items-center bg-[#3778c2] h-screen">
       <div class="w-80 h-[600px] border rounded-lg shadow-2xl bg-zinc-500 px-2 py-4">
         <div class="border rounded-lg h-full overflow-auto px-1 py-3 bg-white">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
           <%= yield %>
         </div>
       </>

@@ -1,11 +1,25 @@
+<%= javascript_importmap_tags %>
+<%= yield(:head)%>
+<% content_for :head do %>
+  <%= javascript_import_module_tag "index" %>
+<% end %>
+
 <div class="h-full flex flex-col justify-between">
   <section class="bg-[#3778c2] text-white p-2">
-    <div class="flex justify-between mb-3">
-      <span class="w-5 h-5">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </span>
+    <div class="flex justify-between mb-3 items-center">
+      <div class="relative menu" id="menu">
+        <button class="w-5 h-5 cursor-pointer" type="button" >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+        <nav id="nav" class="hidden absolute top-5">
+          <ul>
+            <li><%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure'} %></li>
+          </ul>
+        </nav>
+      </div>
+
       <h2>TRADES</h2>
       <span class="w-5 h-5">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -13,11 +27,9 @@
         </svg>
       </span>
     </div>
-    <div class="flex justify-end mt-2 px-2 text-xs space-x-2">
-      <p>Most recent</p>
-      <p class="text-gray-300">Most ancient</p>
-    </div>
   </section>
+  <%= render partial: 'shared/flash' %>
+
   <section class="h-full bg-gray-200 flex flex-col space-y-2 pt-2 items-center">
     <% @categories&.map do |category| %>
       <div class="flex justify-between p-2 shadow-md bg-white gap-2 w-[95%] rounded-sm">

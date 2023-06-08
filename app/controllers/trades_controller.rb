@@ -6,9 +6,9 @@ class TradesController < ApplicationController
   end
 
   def create
-    trade = Trade.new(trade_params)
+    trade = Trade.new(name: trade_params[:name], amount: trade_params[:amount])
     trade.author = current_user
-    trade.categories << Category.find(params[:category_id])
+    trade.categories << Category.find(trade_params[:category])
     if trade.save
       flash[:notice] = 'New trade was created successfully'
       redirect_to categories_path
@@ -21,6 +21,6 @@ class TradesController < ApplicationController
   private
 
   def trade_params
-    params.required(:trade).permit(:name, :amount)
+    params.required(:trade).permit(:name, :amount, :category)
   end
 end
