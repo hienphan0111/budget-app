@@ -74,8 +74,6 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'tailwindcss'
-gem 'autoprefixer-rails'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
