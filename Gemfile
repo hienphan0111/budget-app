@@ -91,3 +91,7 @@ group :development, :test do
 end
 
 gem 'inline_svg'
+
+gem 'factory_bot_rails'
+
+gem 'faker'
