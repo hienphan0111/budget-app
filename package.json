@@ -20,10 +20,4 @@
     "url": "https://github.com/hienphan0111/budget-app/issues"
   },
   "homepage": "https://github.com/hienphan0111/budget-app#readme",
-  "devDependencies": {
-    "tailwindcss": "^3.3.2"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.14"
-  }
 }
