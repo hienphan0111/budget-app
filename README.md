@@ -37,6 +37,8 @@
 
  This is a mobile web application where user can manage their budget: user have a list of transactions associated with a category, so that they can see how much money they spent and on what.
 
+- [Click here](https://www.loom.com/share/ed1a05f7ea4d4b5c911e95e9d7fab2c9) to watch the overview video
+
 <!--
 </br>
  <div align="center">
