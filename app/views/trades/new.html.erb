@@ -5,7 +5,7 @@
     <div class="flex flex-col w-[95%] items-center gap-2">
       <%= f.text_field :name, placeholder: 'Name', class: 'w-full p-2 space-y-2' %>
       <%= f.number_field :amount, step: 0.01, placeholder: 'Amount', class: 'w-full p-2'  %>
-      <%= f.collection_select :category, Category.all, :id, :name, {prompt: 'Select a category'}, class: 'w-full p-2' %>
+      <%= f.collection_select :category, Category.where(user: current_user), :id, :name, {prompt: 'Select a category'}, class: 'w-full p-2' %>
     </div>
     <div class="bg-[#5fb523] text-white py-2 text-center flex w-full">
       <%= f.submit 'SAVE' , class: 'border border-solid border-white mx-2 py-2 w-full hover:text-amber-300'%>
