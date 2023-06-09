@@ -1,0 +1,30 @@
+<div class="flex flex-col h-full">
+  <%= render partial: 'shared/header_bar', locals: { title: 'TRADES', url: '/' } %>
+  <div class="flex justify-end pb-2 px-2 text-xs space-x-2 bg-[#3778c2]">
+      <p class="text-white">Most recent</p>
+  </div>
+
+  <div class="flex h-full flex-col items-center justify-between p-2 shadow-md bg-white gap-2 w-full rounded-sm">
+    <div class="flex justify-between w-[95%] items-center">
+      <div class="flex justify-between gap-2 items-center">
+        <%= image_tag @category.icon, class: 'w-14 h-14' %>
+        <p class="pt-1"><%= link_to @category.name, category_path(@category) %></p>
+      </div>
+      <p class="mr-2">
+        $<%= @category.trades.reduce(0) { |sum, tr| sum + tr.amount } %>
+      </p>
+    </div>
+    <div class="h-full flex flex-col p-2 w-full">
+      <% @trades&.each do |t| %>
+        <div class="shadow-lg flex justify-between py-4 px-3 w-full items-center">
+          <p><%= t.name %></p>
+          <p>$<%= t.amount %></p>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+    <section class="bg-[#5fb523] text-white py-2 text-center flex">
+      <%= link_to 'ADD TRADE', new_category_trade_path(@category), class: 'border border-solid border-white mx-2 py-2 w-full hover:text-amber-300' %>
+    </section>
+</div>

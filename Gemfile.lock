@@ -69,8 +69,6 @@ GEM
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
-    autoprefixer-rails (10.4.13.0)
-      execjs (~> 2)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -103,7 +101,13 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
-    execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (3.2.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -111,6 +115,9 @@ GEM
     importmap-rails (1.1.6)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    inline_svg (1.9.0)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-console (0.6.0)
     irb (1.7.0)
       reline (>= 0.3.0)
@@ -144,10 +151,13 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.2-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.15.2-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.23.0)
     parser (3.2.2.1)
       ast (~> 2.4.1)
+    pg (1.5.3)
     pg (1.5.3-x64-mingw-ucrt)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -242,9 +252,6 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
-    tailwindcss (0.1.1)
-    tailwindcss-rails (2.0.29-x64-mingw-ucrt)
-      railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -277,15 +284,18 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
-  autoprefixer-rails
   bootsnap
   capybara
   debug
   devise
   dotenv-rails
+  factory_bot_rails
+  faker
   importmap-rails
+  inline_svg
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
@@ -297,8 +307,6 @@ DEPENDENCIES
   shoulda-matchers (~> 5.0)
   sprockets-rails
   stimulus-rails
-  tailwindcss
-  tailwindcss-rails
   turbo-rails
   tzinfo-data
   web-console

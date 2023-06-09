@@ -25,7 +25,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails"
+
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
@@ -74,8 +74,6 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'tailwindcss'
-gem 'autoprefixer-rails'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
@@ -89,3 +87,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 5.0'
 end
+
+gem 'inline_svg'
+
+gem 'factory_bot_rails'
+
+gem 'faker'

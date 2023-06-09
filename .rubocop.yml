@@ -11,6 +11,9 @@ AllCops:
     - 'config/**/*'
     - 'test/**/*'
     - 'bin/**/*'
+    - 'lib/**/*'
+    - 'assets/builds/**/*'
+    - 'assets/builds/tailwind.css'
 
   DisplayCopNames: true
   Metrics/MethodLength:

@@ -1,0 +1,54 @@
+<%= javascript_importmap_tags %>
+<%= yield(:head)%>
+<% content_for :head do %>
+  <%= javascript_import_module_tag "index" %>
+<% end %>
+
+<div class="h-full flex flex-col justify-between">
+  <section class="bg-[#3778c2] text-white p-2">
+    <div class="flex justify-between mb-3 items-center">
+      <div class="relative menu" id="menu">
+        <button class="w-5 h-5 cursor-pointer" type="button" >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+        <nav id="nav" class="hidden absolute top-5">
+          <ul>
+            <li><%= button_to 'Logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure'} %></li>
+          </ul>
+        </nav>
+      </div>
+
+      <h2>CATEGORIES</h2>
+      <span class="w-5 h-5">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </span>
+    </div>
+  </section>
+  <%= render partial: 'shared/flash' %>
+
+  <section class="h-full bg-gray-200 flex flex-col space-y-2 pt-2 items-center">
+    <% @categories&.map do |category| %>
+      <div class="flex justify-between p-2 shadow-md bg-white gap-2 w-[95%] rounded-sm">
+        <div class="flex justify-between gap-2">
+          <%= image_tag category.icon, class: 'w-14 h-14' %>
+          <div class="flex flex-col justify-between">
+            <p class="pt-1"><%= link_to category.name, category_path(category) %></p>
+            <p class="text-xs"><%= category.created_at %></p>
+          </div>
+        </div>
+        <p class="mr-2">
+        $<%= category.trades.reduce(0) { |sum, tr| sum + tr.amount } %>
+        </p>
+      </div>
+    <% end %>
+  </section>
+
+  <section class="bg-[#5fb523] text-white py-2 text-center flex">
+    <%= link_to 'ADD CATEGORIES', new_category_path, class: 'border border-solid border-white mx-2 py-2 w-full hover:text-amber-300' %>
+  </section>
+
+</div>
