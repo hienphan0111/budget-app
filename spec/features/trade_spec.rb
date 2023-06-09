@@ -5,7 +5,6 @@ RSpec.describe 'Trade', type: :feature do
 
   scenario 'access categories page' do
     user = FactoryBot.create(:user)
-    user.confirm user.confirm unless user.confirmed?
     category = Category.create(name: 'House', icon: 'https://cdn-icons-png.flaticon.com/128/11087/11087391.png', user: user)
 
     sign_in user
@@ -16,7 +15,6 @@ RSpec.describe 'Trade', type: :feature do
 
   scenario 'Create new trade' do
     user = FactoryBot.create(:user)
-    user.confirm user.confirm unless user.confirmed?
     category = Category.create(name: 'House', icon: 'https://cdn-icons-png.flaticon.com/128/11087/11087391.png', user: user)
 
     sign_in user

@@ -17,7 +17,7 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it "returns right number of recipes" do
+  it "returns right number of category" do
     subject.categories << category
     subject.trades << trade
     expect(subject.categories.length).to eq(1)

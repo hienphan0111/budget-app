@@ -8,17 +8,15 @@ RSpec.describe 'Authentication', type: :feature do
 
   scenario 'access categories page' do
     user = FactoryBot.create(:user)
-    user.confirm user.confirm unless user.confirmed?
 
     sign_in user
     visit categories_path
 
-    expect(page).to have_content('TRADES')
+    expect(page).to have_content('CATEGORIES')
   end
 
-  scenario 'user logs in successfully' do
+  scenario 'create new category in successfully' do
     user = FactoryBot.create(:user)
-    user.confirm user.confirm unless user.confirmed?
 
     sign_in user
     # sign_in user

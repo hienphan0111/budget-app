@@ -18,6 +18,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [ Demo app](#demo-app)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -37,7 +38,11 @@
 
  This is a mobile web application where user can manage their budget: user have a list of transactions associated with a category, so that they can see how much money they spent and on what.
 
-- [Click here](https://www.loom.com/share/ed1a05f7ea4d4b5c911e95e9d7fab2c9) to watch the overview video
+- [Click here](https://www.loom.com/share/7c2a38583bf7443c81c9096c7936aaa8) to watch the overview video
+
+## Demo app <a name="demo-app"></a>
+
+- [Click here](https://budget-i487.onrender.com/) to try the demo app
 
 <!--
 </br>

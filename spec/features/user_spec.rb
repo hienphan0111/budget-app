@@ -16,7 +16,7 @@ RSpec.describe 'User index page:', type: :system do
 
       click_on "Next"
 
-      expect(page).to have_content("Budget")
+      expect(page).to have_content("CATEGORIES")
     end
   end
 

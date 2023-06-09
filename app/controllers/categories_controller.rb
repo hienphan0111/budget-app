@@ -2,13 +2,6 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   helper CategoriesHelper
 
-  @icon_list = [
-    {
-      name: 'Academic Cap',
-      url: 'academic_cap.svg'
-    }
-  ]
-
   def index
     if current_user
       @categories = Category.includes(:trades).where(user: current_user)
